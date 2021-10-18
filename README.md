@@ -137,10 +137,21 @@ sudo pip3 install boto3
 python3 MoviesCreateTable.py
 ```
 
-### 6. Examples Using Table 
+### 6. Example Using Table 
 
+#### 6.1. Check Table Detail
 
+```
+aws dynamodb describe-table --table-name Movies --endpoint-url http://localhost:8000
+```
 
+#### 6.2. Check Table: ItemCount
+
+```
+aws dynamodb describe-table --table-name Movies --endpoint-url http://localhost:8000 | grep ItemCount
+```
+
+#### 6.9. Write Shell Script - Delete All Items
 
 ```shell
 #!/bin/bash
@@ -154,6 +165,8 @@ aws dynamodb scan --table-name $TABLE_NAME --attributes-to-get "$KEY" \
   xargs -t -I keyvalue aws dynamodb delete-item --table-name $TABLE_NAME \
   --key "{\"$KEY\": {\"S\": \"keyvalue\"}}"
 ```
+
+
 
 ## References
 
