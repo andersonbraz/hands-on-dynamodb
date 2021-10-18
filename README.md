@@ -47,13 +47,12 @@ wget https://s3.us-west-2.amazonaws.com/dynamodb-local/dynamodb_local_latest.tar
 ### 2. Extract Package DynamoDB
 
 ```
-tar zxf dynamodb_local_latest.tar.gz
+tar -xvzf dynamodb_local_latest.tar.gz
 ```
 
 ### 3. Run DynamoDB
 
 ```
-cd dynamodb_local_latest
 java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb
 ```
 
