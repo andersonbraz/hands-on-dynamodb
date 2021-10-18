@@ -89,7 +89,6 @@ code MoviesCreateTable.py
 
 import boto3
 
-
 def create_movie_table(dynamodb=None):
     if not dynamodb:
         dynamodb = boto3.resource('dynamodb', endpoint_url="http://localhost:8000")
@@ -137,21 +136,56 @@ sudo pip3 install boto3
 python3 MoviesCreateTable.py
 ```
 
-### 6. Example Using Table 
+### 6. Create Script Python - LOAD DATA 
 
-#### 6.1. Check Table Detail
+#### 6.1. Create File -- LOAD DATA
+
+```
+code MoviesLoadData.py
+```
+
+#### 6.1. Write Code -- LOAD DATA
+
+```python
+
+from decimal import Decimal
+import json
+import boto3
+
+def load_movies(movies, dynamodb=None):
+    if not dynamodb:
+        dynamodb = boto3.resource('dynamodb', endpoint_url="http://localhost:8000")
+
+    table = dynamodb.Table('Movies')
+    for movie in movies:
+        year = int(movie['year'])
+        title = movie['title']
+        print("Adding movie:", year, title)
+        table.put_item(Item=movie)
+
+
+if __name__ == '__main__':
+    with open("moviedata.json") as json_file:
+        movie_list = json.load(json_file, parse_float=Decimal)
+    load_movies(movie_list)
+```
+
+
+### 7. Example Using Table 
+
+#### 7.1. Check Table Detail
 
 ```
 aws dynamodb describe-table --table-name Movies --endpoint-url http://localhost:8000
 ```
 
-#### 6.2. Check Table: ItemCount
+#### 7.2. Check Table: ItemCount
 
 ```
 aws dynamodb describe-table --table-name Movies --endpoint-url http://localhost:8000 | grep ItemCount
 ```
 
-#### 6.9. Write Shell Script - Delete All Items
+#### 7.9. Write Shell Script - Delete All Items
 
 ```shell
 #!/bin/bash
@@ -165,6 +199,11 @@ aws dynamodb scan --table-name $TABLE_NAME --attributes-to-get "$KEY" \
   xargs -t -I keyvalue aws dynamodb delete-item --table-name $TABLE_NAME \
   --key "{\"$KEY\": {\"S\": \"keyvalue\"}}"
 ```
+
+
+## Files
+
+[moviedata.zip](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/samples/moviedata.zip)
 
 ## References
 
