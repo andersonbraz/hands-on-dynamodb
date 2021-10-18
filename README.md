@@ -39,6 +39,8 @@ Python 3.8.9
 ### 1. Download Package DynamoDB
 
 ```
+mkdir dynamodb
+cd dynamodb
 wget https://s3.us-west-2.amazonaws.com/dynamodb-local/dynamodb_local_latest.tar.gz
 ```
 
