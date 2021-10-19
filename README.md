@@ -202,7 +202,8 @@ aws dynamodb scan --table-name $TABLE_NAME --attributes-to-get "$KEY" \
 
 ## Files
 
-[moviedata.zip](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/samples/moviedata.zip)
+[moviedata.zip](https://github.com/andersonbraz/hands-on-dynamodb/raw/main/moviedata.zip)
+[musicdata.zip](https://github.com/andersonbraz/hands-on-dynamodb/raw/main/musicdata.zip)
 
 ## References
 
