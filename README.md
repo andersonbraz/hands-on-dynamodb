@@ -212,6 +212,6 @@ aws dynamodb scan --table-name $TABLE_NAME --attributes-to-get "$KEY" \
 
 [Developer Guide - Getting Started - Python](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GettingStarted.Python.html)
 
-[Project Boto3 The AWS SDK for Python](https://pypi.org/project/boto3/)
+[Boto3 Project - The AWS SDK for Python](https://pypi.org/project/boto3/)
 
-
+[Boto3 Documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html)
