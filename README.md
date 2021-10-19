@@ -209,3 +209,5 @@ aws dynamodb scan --table-name $TABLE_NAME --attributes-to-get "$KEY" \
 [Developer Guide - DynamoDB Local](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.html)
 
 [Developer Guide - Getting Started - Python](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GettingStarted.Python.html)
+
+
