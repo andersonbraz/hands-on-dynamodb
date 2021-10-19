@@ -200,7 +200,6 @@ aws dynamodb scan --table-name $TABLE_NAME --attributes-to-get "$KEY" \
   --key "{\"$KEY\": {\"S\": \"keyvalue\"}}"
 ```
 
-
 ## Files
 
 [moviedata.zip](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/samples/moviedata.zip)
